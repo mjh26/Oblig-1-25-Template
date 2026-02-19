@@ -23,6 +23,16 @@
 
             <form id="change-password-form">
                 <!-- TODO: add form for change password -->
+                <label>Old Password</label>
+                <input type="password" id="old-pass">
+
+                <label>New Password</label>
+                <input type="password" id="new-pass">
+
+                <label>Repeat New Password</label>
+                <input type="password" id="repeat-pass">
+
+                <button type="submit">Change Password</button>
             </form>
         </div>
         <div class="spell-page hidden" id="change-name-book">
@@ -39,6 +49,9 @@
                     <!-- TODO: add form for changing name -->
                      <label>Wizard Name</label>
                      <input type="text" id = "Wizard-name">
+
+                     <form id="rename-wizard-form">
+                    <button type="submit">Cast Rename Spell</button>
                 </form>
             </div>
         </div>
@@ -51,6 +64,18 @@
             <div class="page-right">
                 <form id="summon-form">
                     <!-- TODO: add form for summon familiar -->
+                       <label>Choose Familiar</label>
+                       <select id="familiar">
+                            <option>Llama</option>
+                            <option>Dragon</option>
+                            <option>Cat</option>
+                            <option>Raven</option>
+                        </select>
+
+                        <label>Familiar Name</label>
+                        <input type="text" id="familiar-name">
+
+                        <button type="submit">Summon</button>
                 </form>
             </div>
         </div>
