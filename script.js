@@ -25,8 +25,8 @@ console.log("ready!")
 
 })
 //TODO: add functionality to open the correct spell books
-function openSpellBook(){
-    console.log("How do you find the right spellbook?!")
+function openSpellBook(id) {
+    console.log("Opening:", id);
 
     const bookView = document.getElementById("book-view");
     bookView.classList.remove("hidden");
