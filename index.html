@@ -12,7 +12,10 @@
 <body class="library">
 <h1>
     Welcome to The MagiScript Library of Mexyll the Magnificent
+    <span id="wizard-name-span">Mexyll</span> the 
+    <span id="wizard-title-span">Magnificent</span>
 </h1>
+
 <div class="book-view-container">
     <div id="book-view" class="hidden">
         <button id="close-tome">Close Tome</button>
@@ -23,13 +26,18 @@
 
             <form id="change-password-form">
                 <!-- TODO: add form for change password -->
+                <h2>Change Password</h2>
+
+                <label>Username</label>
+                <input type="text" id="username">
+
                 <label>Old Password</label>
                 <input type="password" id="old-pass">
 
                 <label>New Password</label>
                 <input type="password" id="new-pass">
 
-                <label>Repeat New Password</label>
+                <label>Confirm New Password</label>
                 <input type="password" id="repeat-pass">
 
                 <button type="submit">Change Password</button>
@@ -39,6 +47,18 @@
             <div class="page-left">
                 <img src="resources/spellPages/renameWizard.webp" alt="wizard looking in mirror">
             </div>
+            <form id="rename-wizard-form" class="page-right">
+                <h2>Rename Wizard</h2>
+
+                <label>New Name</label>
+                <input type="text" id="wizard-name">
+
+                <label>New Title</label>
+                <input type="text" id="wizard-title">
+
+                <button type="submit">Cast Rename Spell</button>
+            </form>
+        </div>
 
             <div class="page-right">
                 This spell weaves the ancient magic of names and identity, allowing the caster to shed old titles and
@@ -49,8 +69,6 @@
                     <!-- TODO: add form for changing name -->
                      <label>Wizard Name</label>
                      <input type="text" id = "wizard-name">
-
-                     <form id="rename-wizard-form">
                     <button type="submit">Cast Rename Spell</button>
                 </form>
             </div>
@@ -64,23 +82,61 @@
             <div class="page-right">
                 <form id="summon-form">
                     <!-- TODO: add form for summon familiar -->
-                       <label>Choose Familiar</label>
-                       <select id="familiar">
-                            <option>Llama</option>
-                            <option>Dragon</option>
-                            <option>Cat</option>
-                            <option>Raven</option>
-                        </select>
+                    <h2>Summon Familiar</h2>
+                    
+                    <label>Familiar Name</label>
+                    <input type="text" id="familiar-name">
 
-                        <label>Familiar Name</label>
-                        <input type="text" id="familiar-name">
+                    <label>Base Type</label>
+                    <select id="familiar">
+                    <option>Llama</option>
+                    <option>Dragon</option>
+                    <option>Cat</option>
+                    <option>Raven</option>
+                    <option>Bicycle</option>
+                </select>
 
-                        <button type="submit">Summon</button>
-                </form>
-            </div>
+                <label>
+                    <input type="checkbox" id="has-wings">
+                    Has Wings
+                </label>
+
+                <div id="wing-type-container" class="hidden">
+                    <label>Wing Type</label>
+                    <select id="wing-type">
+                        <option>Dragon</option>
+                        <option>Fairy</option>
+                        <option>Bat</option>
+                        <option>Eagle</option>
+                    </select>
+                </div>
+
+                 <label>Traits</label>
+                <label><input type="checkbox" class="trait" value="Fire Breath"> Fire Breath</label>
+                <label><input type="checkbox" class="trait" value="Extra Head"> Extra Head</label>
+                <label><input type="checkbox" class="trait" value="Levitating"> Levitating</label>
+
+                <label>Mood</label>
+                <select id="mood">
+                    <option>Angry</option>
+                    <option>Grumpy</option>
+                    <option>Irate</option>
+                    <option>Apathetic</option>
+                    <option>Sleepy</option>
+                    <option>Inspired</option>
+                    <option>Confident</option>
+                    <option>Joyful</option>
+                </select>
+
+                <label>End of Contract</label>
+                <input type="date" id="contract-end">
+
+                <button type="submit">Summon</button>
+            </form>
         </div>
     </div>
 </div>
+
 
 <p>Explore the magic within books...</p>
 <div class="books-container">
