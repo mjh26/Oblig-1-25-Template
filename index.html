@@ -11,9 +11,9 @@
 </head>
 <body class="library">
 <h1>
-    Welcome to The MagiScript Library of Mexyll the Magnificent
-    <span id="wizard-name-span">Mexyll</span> the 
-    <span id="wizard-title-span">Magnificent</span>
+Welcome to The MagiScript Library of 
+<span id="wizard-name-span">Mexyll</span> the 
+<span id="wizard-title-span">Magnificent</span>
 </h1>
 
 <div class="book-view-container">
@@ -47,32 +47,25 @@
             <div class="page-left">
                 <img src="resources/spellPages/renameWizard.webp" alt="wizard looking in mirror">
             </div>
+            <!-- TODO: add form for changing name -->
+
             <form id="rename-wizard-form" class="page-right">
                 <h2>Rename Wizard</h2>
 
-                <label>New Name</label>
-                <input type="text" id="wizard-name">
+            <p>
+            This spell weaves the ancient magic of names and identity, allowing the caster to shed old titles and
+            embrace a new persona. Speak the incantation with clarity and purpose.
+            </p>
 
-                <label>New Title</label>
-                <input type="text" id="wizard-title">
+            <label>New Name</label>
+            <input type="text" id="wizard-name">
 
-                <button type="submit">Cast Rename Spell</button>
-            </form>
-        </div>
+            <label>New Title</label>
+            <input type="text" id="wizard-title">
 
-            <div class="page-right">
-                This spell weaves the ancient magic of names and identity, allowing the caster to shed old titles and
-                embrace a new persona. The incantation should be spoken with a clear vision of the new name and its
-                attributes, marking a rebirth of self in the mystic realms.
-                You should henceforth be known as
-                <form id="rename-wizard-form">
-                    <!-- TODO: add form for changing name -->
-                     <label>Wizard Name</label>
-                     <input type="text" id = "wizard-name">
-                    <button type="submit">Cast Rename Spell</button>
-                </form>
-            </div>
-        </div>
+            <button type="submit">Cast Rename Spell</button>
+    </form>
+</div>
 
         <div class="spell-page hidden" id="summon-familiar-book">
             <div class="page-left">

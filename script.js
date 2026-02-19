@@ -23,6 +23,9 @@ console.log("ready!")
     document.getElementById("summon-form")
         .addEventListener("submit", summonFamiliar);
 
+    document.getElementById("has-wings")
+        .addEventListener("change", toggleWingType);
+
 })
 //TODO: add functionality to open the correct spell books
 function openSpellBook(id) {
@@ -69,14 +72,31 @@ function changeName(event) {
     event.preventDefault();
 
     const newName = document.getElementById("wizard-name").value;
+    const newTitle = document.getElementById("wizard-title").value;
 
-    if (newName.trim() === "") {
-        alert("A wizard must have a name!");
+    if (!newName || !newTitle) {
+        alert("Both name and title are required!");
         return;
     }
 
     userData.wizardName = newName;
-    alert("You shall henceforth be known as " + newName + "!");
+    userData.wizardTitle = newTitle;
+
+    document.getElementById("wizard-name-span").innerText = newName;
+    document.getElementById("wizard-title-span").innerText = newTitle;
+
+    alert(`You shall henceforth be known as ${newName} the ${newTitle}!`);
+}
+
+function toggleWingType() {
+    const wingBox = document.getElementById("has-wings");
+    const wingContainer = document.getElementById("wing-type-container");
+
+    if (wingBox.checked) {
+        wingContainer.classList.remove("hidden");
+    } else {
+        wingContainer.classList.add("hidden");
+    }
 }
 
 //TODO: add functionality to summon familiar
@@ -85,20 +105,31 @@ function summonFamiliar(event) {
 
     const type = document.getElementById("familiar").value;
     const name = document.getElementById("familiar-name").value;
+    const hasWings = document.getElementById("has-wings").checked;
+    const wingType = document.getElementById("wing-type").value;
+    const mood = document.getElementById("mood").value;
+    const contractEnd = document.getElementById("contract-end").value;
 
-    if (name.trim() === "") {
-        alert("A familiar must have a name!");
-        return;
+    const traits = [...document.querySelectorAll(".trait:checked")]
+        .map(t => t.value);
+
+    let description = `You have summoned: ${name}, a ${type}`;
+
+    if (hasWings) {
+        description += ` with ${wingType} wings`;
     }
 
-    userData.familiar = { type, name };
+    description += `. It has the following traits: ${traits.join(", ") || "None"}.`;
+    description += ` It appears to be ${mood}.`;
+    description += ` The contract ends on ${contractEnd}.`;
 
-    alert("A " + type + " named " + name + " materializes in a puff of smoke!");
+    alert(description);
 }
 
 // have a function where you can load content into a "user array" -> easier to work with
 const userData = {
     password: "magic123",
-    wizardName: "Mexyll the Magnificent",
+    wizardName: "Mexyll",
+    wizardTitle: "Magnificent",
     familiar: null
 };
